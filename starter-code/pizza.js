@@ -44,6 +44,9 @@ function renderPepperonni() {
 }
 
 function renderMushrooms() {
+  document.querySelector('Mushrooms')forEach(function($Mushrooms){
+
+  })
   // Iteration 1: set the visibility of `<section class="mushroom">`
 }
 
