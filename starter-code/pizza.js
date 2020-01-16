@@ -44,17 +44,41 @@ function renderPepperonni() {
 }
 
 function renderMushrooms() {
-  document.querySelector('Mushrooms')forEach(function($Mushrooms){
+  document.querySelectorAll('.mushroom').forEach(function($mushroom){
+    if (state.mushrooms){
+      $mushroom.style.visibility = 'visible';
 
+    }
+    else {
+      $mushroom.style.visibility = 'hidden';
+    }
   })
   // Iteration 1: set the visibility of `<section class="mushroom">`
 }
 
 function renderGreenPeppers() {
+  document.querySelectorAll('.green-pepper').forEach(function($pepper){
+    if (state.greenPeppers){
+      $pepper.style.visibility = 'visible';
+
+    }
+    else {
+      $pepper.style.visibility = 'hidden'
+    }
+  })
   // Iteration 1: set the visibility of `<section class="green-pepper">`
 }
 
 function renderWhiteSauce() {
+  let sauce = document.querySelector('.sauce')
+    if (state.whiteSause){
+      sauce.classList.add("sauce-white") 
+    }
+    else {
+      sauce.classList.remove("sauce-white")
+      
+    }
+  
   // Iteration 2: add/remove the class "sauce-white" of `<section class="sauce">`
 }
 
@@ -70,7 +94,6 @@ function renderPrice() {
   // Iteration 4: change the HTML of `<aside class="panel price">`
 }
 
-
 renderEverything()
 
 // Iteration 1: Example of a click event listener on `<button class="btn btn-pepperonni">`
@@ -80,9 +103,20 @@ document.querySelector('.btn.btn-pepperonni').onclick = function() {
 }
 
 // Iteration 1: Add click event listener on `<button class="btn btn-mushrooms">`
-
+document.querySelector('.btn.btn-mushrooms').onclick = function(){
+  state.mushrooms = !state.mushrooms
+  renderEverything()
+}
 // Iteration 1: Add click event listener on `<button class="btn btn-green-peppers">`
-
+document.querySelector('.btn.btn-green-peppers').onclick = function(){
+  state.greenPeppers = !state.greenPeppers
+  renderEverything()
+}
 // Iteration 2: Add click event listener on `<button class="btn btn-sauce">`
+document.querySelector('.btn.btn-sauce').onclick = function(){
+  state.whiteSauce = !state.whiteSause;
+  renderEverything()
+  
 
+}
 // Iteration 2: Add click event listener on `<button class="btn btn-crust">`
